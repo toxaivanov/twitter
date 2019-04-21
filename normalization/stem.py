@@ -11,7 +11,7 @@ from nltk.stem import PorterStemmer
 #train  = pd.read_csv('')
 train = pd.read_csv('./input.csv', sep=';', usecols=[0,8,9] , names=['id', 'tweet_id', 'tweet_text'] )
 
-print(train['tweet_text'].head(5))
+#print(train['tweet_text'].head(5))
 
 def remove_pattern(input_txt):
     input_txt = re.sub("@[\w]*", " ", str(input_txt) )
@@ -23,7 +23,7 @@ train['tweet_text'] = train['tweet_text'].apply(lambda x:' '.join(w for w in x.s
 
 tokenized_tweet = train['tweet_text'].apply(lambda x: word_tokenize(x))
 
-print(tokenized_tweet.head(10))
+#print(tokenized_tweet.head(10))
 
 
 stemmer = PorterStemmer()
